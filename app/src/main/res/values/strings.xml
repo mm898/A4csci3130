@@ -3,5 +3,32 @@
     <string name="title_activity_list">ListActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sp">Hello blank fragment</string>
+
+    <!-- These are the entries used for the primary business spinner -->
+    <string-array name="primary_business_entries">
+        <item>Fisher</item>
+        <item>Distributor</item>
+        <item>Processor</item>
+        <item>Fish Monger</item>
+    </string-array>
+
+    <!-- These are the entries used for the province spinner -->
+    <string-array name="province_entries">
+        <item>AB</item>
+        <item>BC</item>
+        <item>MB</item>
+        <item>NB</item>
+        <item>NL</item>
+        <item>NS</item>
+        <item>NT</item>
+        <item>NU</item>
+        <item>ON</item>
+        <item>PE</item>
+        <item>QC</item>
+        <item>SK</item>
+        <item>YT</item>
+        <item> </item>
+    </string-array>
+
 </resources>

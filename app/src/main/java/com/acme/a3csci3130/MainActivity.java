@@ -9,14 +9,28 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+/**
+ * This is the main activity that has create contact button which will show
+ * the form for entering the business info. Also, it shows the stored business
+ * on the main activity.
+ */
 public class MainActivity extends Activity {
 
 
     private ListView contactListView;
-    private FirebaseListAdapter<Contact> firebaseAdapter;
+    public static FirebaseListAdapter<Contact> firebaseAdapter;
 
+    /**
+     * Method for creating the main view and setting up the app
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,19 +66,24 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void createContactButton(View v)
-    {
-        Intent intent=new Intent(this, CreateContactAcitivity.class);
+    /**
+     * Create contact button that is used for creating a business.
+     * @param v
+     */
+    public void createContactButton(View v) {
+        Intent intent = new Intent(this, CreateContactAcitivity.class);
         startActivity(intent);
     }
 
-    private void showDetailView(Contact person)
-    {
+    /**
+     * Show the details of the business when user click on them
+     * @param person
+     */
+    private void showDetailView(Contact person) {
         Intent intent = new Intent(this, DetailViewActivity.class);
         intent.putExtra("Contact", person);
         startActivity(intent);
     }
-
 
 
 }

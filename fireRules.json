@@ -3,14 +3,23 @@
     ".read": "true",
     ".write": "true",
     "contacts": {
-            "$contact": {
-                "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
-                },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
-                }
-            }
+      "$contact": {
+        "business_number":{
+          ".validate":"newData.isNumber() && newData.val() >= 100000000 && newData.val() < 1000000000"
+        },
+        "name":{
+          ".validate":"newData.isString() && newData.val().length > 1 && newData.val().length < 49"
+        },
+        "address":{
+          ".validate":"newData.isString() && newData.val().length < 50"
+        },
+        "primary_business":{
+          ".validate":"newData.isString()"
+        },
+        "province":{
+          ".validate":"newData.isString()"
         }
+      }
+    }
   }
 }
